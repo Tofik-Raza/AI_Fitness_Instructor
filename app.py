@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, render_template
 import joblib
 import pandas as pd
 from flask_cors import CORS
@@ -73,9 +73,9 @@ def get_nutrition():
         "fat": round(preds[2], 2),
         "carbs": round(preds[3], 2)
     }
-
-    return jsonify(response)
+    response = jsonify(response)
+    return render_template("index.html", response=response)
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=5001, debug=True)
+    app.run(debug=True, use_reloader=False)
 
