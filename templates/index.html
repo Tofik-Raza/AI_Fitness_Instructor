@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Personal Fitness Tool</title>
+  <link rel="stylesheet" href="static/styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Personal Fitness Tool</h1>
+
+    <!-- Personal Data -->
+    <section class="card">
+      <h2>Personal Data</h2>
+      <p>Name</p>
+      <input type="text" id="name" placeholder="Name">
+      <p>Age</p>
+      <input type="number" id="age" placeholder="Age">
+      <p>Weight (kg)</p>
+      <input type="number" id="weight" placeholder="Weigh">
+      <p>Height (cm)</p>
+      <input type="number" id="height" placeholder="Height">
+      <p>Gender</p>
+      <select id="sex" placeholder="Sex">
+        <option>male</option>
+        <option>female</option>
+        <option>other</option>
+      </select>
+      <p>Activity Level</p>
+      <select id="activity_level">
+        <option>sedentary</option>
+        <option>lightly active</option>
+        <option>moderately active</option>
+        <option>very active</option>
+        <option>super active</option>
+      </select>
+    </section>
+
+    
+    <!-- Nutrition Goals -->
+    <section class="card">
+      <h2>Nutrition Goals</h2>
+      <div class="nutrients">
+        <label>Calories: <input type="number" id="calories" value="0"></label>
+        <label>Protein (g): <input type="number" id="protein" value="0"></label>
+        <label>Fat (g): <input type="number" id="fat" value="0"></label>
+        <label>Carbs (g): <input type="number" id="carbs" value="0"></label>
+      </div>
+      <button onclick="generateNutrition()">Generate with AI</button>
+    </section>
+
+    <!-- Goals -->
+    <section class="card">
+      <h2>Goals</h2>
+      <select id="goalSelect">
+  <option value="Muscle Gain">Muscle Gain</option>
+  <option value="Fat Loss">Fat Loss</option>
+  <option value="Stay Active">Stay Active/General Fitness</option>
+  <option value="Endurance">Improve Endurance</option>
+  <option value="Strength">Increase Strength</option>
+  <option value="Flexibility">Improve Flexibility</option>
+  <option value="Body Recomposition">Body Recomposition</option>
+  <option value="Cardio Health">Improve Cardiovascular Health</option>
+  <option value="Tone">Tone & Define Muscles</option>
+  <option value="Posture Improvement">Posture Improvement</option>
+  <option value="Weight Gain">Weight gain</option>
+</select>
+
+      <button onclick="addGoal()">Add Goal</button>
+      <div id="goalsContainer" class="tag-container"></div>
+    </section>
+
+    <!-- Notes -->
+    <section class="card">
+      <h2>Your Notes:</h2>
+      <div id="notesContainer"></div>
+      <div id="noteInputContainer">
+        <input type="text" id="noteInput" placeholder="Add a new note">
+        <button onclick="addNote()">Add Note</button>
+      </div>
+    </section>
+
+    <!-- Ask AI -->
+    <section class="card">
+      <h2>Ask AI</h2>
+      <input type="text" id="askInput" placeholder="Type your question for AI here">
+      <button onclick="askAI()">Ask AI</button>
+      <div id="aiResponseContainer">
+        <h3>AI Response:</h3>
+      <p id="aiAnswer"></p>
+      </div>
+    </section>
+  </div>
+
+  <script src="static/script.js"></script>
+</body>
+</html>
