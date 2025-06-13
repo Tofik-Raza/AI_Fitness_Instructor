@@ -3,6 +3,7 @@ import joblib
 import pandas as pd
 from flask_cors import CORS
 from transformers import AutoTokenizer, AutoModelForCausalLM
+import torch
 
 app = Flask(__name__)
 CORS(app)  # Allow cross-origin requests from frontend
