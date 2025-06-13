@@ -53,7 +53,7 @@ async function generateNutrition() {
     activity_level: document.getElementById('activity_level').value,
   };
 
-  const response = await fetch("http://localhost:5000/api/nutrition", {
+  const response = await fetch("http://localhost:5001/api/nutrition", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(userData),
